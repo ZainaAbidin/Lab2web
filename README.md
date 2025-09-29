@@ -37,3 +37,5 @@ Prioritas lebih rendah dibanding inline. Jika keduanya ada, browser akan membaca
 /* style.css (Eksternal) */
 h1 { color: blue; }
 ```
+
+## 4.

@@ -8,3 +8,18 @@ Pendeklarasian ini menggunakan selektor elemen, artinya semua elemen `<h1>` yang
 
 `intro h1 { ... }`
 Pendeklarasian ini lebih spesifik karena menggunakan kombinasi selektor ID dan elemen. Aturan hanya berlaku untuk `<h1>`yang berada di dalam elemen dengan `id="intro"`. Jadi, kalau ada beberapa `<h1>` di halaman, hanya `<h1>` di dalam area #intro yang terpengaruh, sedangkan `<h1>` lain tetap menggunakan aturan berbeda atau gaya default. Selektor ini berguna ketika kita ingin memberikan gaya khusus pada judul tertentu di dalam sebuah bagian halaman, tanpa memengaruhi `<h1>` lainnya.
+
+## 3.
+Jika ada deklarasi CSS internal, eksternal, dan inline untuk elemen yang sama, maka yang akan ditampilkan oleh browser adalah deklarasi dengan prioritas tertinggi. Urutan prioritasnya seperti ini:
+
+1. Inline CSS → Paling kuat, karena ditulis langsung di dalam elemen HTML dengan atribut style="".
+2. Internal CSS → Ditulis di dalam tag <style> pada file HTML yang sama.
+3. Eksternal CSS → Ditulis di file .css terpisah lalu dipanggil dengan <link>.
+
+Jadi, jika ketiga deklarasi itu ada pada elemen yang sama, maka yang tampil di browser adalah style dari inline CSS, kecuali ada aturan khusus seperti penggunaan !important pada internal/eksternal, yang bisa mengubah prioritas.
+
+Inline CSS
+Prioritas tertinggi karena ditulis langsung di elemen HTML.
+```
+<h1 style="color: red;">Hello World</h1>
+```

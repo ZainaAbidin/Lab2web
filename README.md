@@ -18,8 +18,22 @@ Jika ada deklarasi CSS internal, eksternal, dan inline untuk elemen yang sama, m
 
 Jadi, jika ketiga deklarasi itu ada pada elemen yang sama, maka yang tampil di browser adalah style dari inline CSS, kecuali ada aturan khusus seperti penggunaan !important pada internal/eksternal, yang bisa mengubah prioritas.
 
-Inline CSS
+**Inline CSS**
 Prioritas tertinggi karena ditulis langsung di elemen HTML.
 ```
 <h1 style="color: red;">Hello World</h1>
+```
+
+**internal**
+Prioritas lebih rendah dibanding inline. Jika keduanya ada, browser akan membaca urutan terakhir.
+```
+<style>
+  h1 { color: green; } /* Internal */
+</style>
+```
+
+**eksternal**
+```
+/* style.css (Eksternal) */
+h1 { color: blue; }
 ```

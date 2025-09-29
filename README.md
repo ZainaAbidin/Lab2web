@@ -39,3 +39,24 @@ h1 { color: blue; }
 ```
 
 ## 4.
+Jika pada sebuah elemen HTML terdapat ID dan Class sekaligus, lalu keduanya memiliki deklarasi CSS masing-masing, maka style yang ditampilkan di browser adalah style dari ID. Hal ini karena dalam hirarki prioritas CSS, ID selector lebih kuat (specificity lebih tinggi) dibandingkan Class selector.
+
+***Misalnya, ada elemen berikut:***
+```
+<p id="paragraf-1" class="text-paragraf">Ini contoh paragraf.</p>
+```
+
+***Kemudian didefinisikan CSS:***
+```
+.text-paragraf {
+  color: blue;   /* Class */
+}
+
+#paragraf-1 {
+  color: red;    /* ID */
+}
+```
+
+Meskipun elemen tersebut memiliki Class dengan warna biru, browser akan menampilkan teks paragraf berwarna merah, karena aturan dari ID #paragraf-1 mengalahkan aturan dari Class .text-paragraf.
+
+Dengan demikian, dapat disimpulkan bahwa ketika sebuah elemen memiliki ID dan Class bersamaan, deklarasi CSS ID yang akan ditampilkan di browser, kecuali ada aturan khusus seperti penggunaan !important yang bisa mengubah prioritas.
